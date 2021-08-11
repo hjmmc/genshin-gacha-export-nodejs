@@ -1,0 +1,11 @@
+{
+  "name": "genshin-gacha-export-nodejs",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node genshin.js"
+  },
+  "dependencies": {
+    "exceljs": "^4.2.1",
+    "node-fetch": "^2.6.1"
+  }
+}
