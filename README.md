@@ -1,3 +1,16 @@
+# 更简单的方式请看
+
+本仓库作为备用, 优先使用浏览器书签的方式: [hjmmc/genshin-gacha-export-js](https://github.com/hjmmc/genshin-gacha-export-js)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 # 原神抽卡记录导出工具（NodeJS版）
 
 特此声明：本工具部分代码复制于 [sunfkny/genshin-gacha-export-js](https://github.com/sunfkny/genshin-gacha-export-js)，侵删
