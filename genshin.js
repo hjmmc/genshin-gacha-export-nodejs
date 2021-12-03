@@ -14,6 +14,12 @@ let AuthKey = ''
 let AuthKeyVer = '1'
 let Lang = 'zh-cn'
 
+function sleep(s) {
+	return new Promise(resolve => {
+		setTimeout(resolve, s * 1000)
+	})
+}
+
 async function getGachaLog(key, page, end_id) {
 	return fetch(
 		GachaLogBaseUrl +
@@ -38,7 +44,7 @@ async function getGachaLogs(name, key) {
 	do {
 		console.log(`正在获取${name}第${page}页`);
 		res = await getGachaLog(key, page, end_id);
-		// await sleep(0.2);
+		await sleep(0.2);
 		end_id = res.data.list.length > 0 ? res.data.list[res.data.list.length - 1].id : 0;
 		list = res.data.list;
 		data.push(...list);
@@ -60,7 +66,7 @@ async function main() {
 	}
 	AuthKeyVer = uri.searchParams.get('authkey_ver') || '1'
 	Lang = uri.searchParams.get('lang') || 'zh-cn'
-	
+
 	const gachaTypes = await fetch(`${GachaTypesUrl}?authkey=${AuthKey}&authkey_ver=${AuthKeyVer}&lang=${Lang}`)
 		.then((res) => res.json())
 		.then((data) => data.data.gacha_type_list);
